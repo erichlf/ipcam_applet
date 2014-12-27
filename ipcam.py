@@ -9,8 +9,11 @@ import threading
 import datetime
 import urllib2
 import json
+from os.path import expanduser
 
-CONFIG_FILE = "~/.config/ipcam_applet/config.json"
+home = expanduser("~")
+
+CONFIG_FILE = "%s/.config/ipcam_applet/config.json" % home
 
 # config sample
 # {
@@ -28,7 +31,7 @@ class IPCAM(gtk.Window):
         try:
             config = json.load(open(CONFIG_FILE))
         except:
-            raise SystemExit("%s config file was not found or parsed correctly"
+            raise SystemExit("%%s config file was not found or parsed correctly"
                              % CONFIG_FILE)
         try:
             url = config['url']
