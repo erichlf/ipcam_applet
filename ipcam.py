@@ -10,7 +10,7 @@ import datetime
 import urllib2
 import json
 
-CONFIG_FILE = "config.json"
+CONFIG_FILE = "~/.config/ipcam_applet/config.json"
 
 # config sample
 # {
